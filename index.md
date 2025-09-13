@@ -1,7 +1,3 @@
----
-title: "syyc_"
----
-
 # Welcome to syyc_
 
 This is my blog.  
