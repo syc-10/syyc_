@@ -6,18 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="revisit-after" content="7 days">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔺</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛩️</text></svg>">
     <title>betat amine "syyc_"</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Oxanium:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         :root {
-            --text-light: #374151;
-            --text-dark: #e5e7eb;
-            --bg-dark: #000000;
-            --blood-red: #ff002b;
-            --blood-dark: #8a0000;
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --accent: #86868b;
+            --border: #2c2c2e;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
         
         * {
@@ -27,290 +29,262 @@
         }
         
         body {
-            font-family: 'Oxanium', cursive;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-dark);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
+            color: var(--text-primary);
             line-height: 1.6;
-            background-image: url('https://images4.alphacoders.com/134/1347724.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-image: linear-gradient(to bottom, #050505, #0a0a0a);
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: -1;
+            padding: 0;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         .container {
-            max-width: 768px;
+            max-width: 780px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
         
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0;
-            position: relative;
+            padding: 2.5rem 0 1.5rem;
         }
         
         .logo {
-            width: 3rem;
-            height: 3rem;
-            background: var(--blood-red);
+            width: 42px;
+            height: 42px;
+            background: var(--text-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            box-shadow: 0 0 15px var(--blood-red);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 10px var(--blood-red); }
-            50% { box-shadow: 0 0 20px var(--blood-red); }
-            100% { box-shadow: 0 0 10px var(--blood-red); }
+            font-weight: 600;
+            color: var(--bg-dark);
+            font-size: 18px;
         }
         
         nav {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.8rem;
             align-items: center;
         }
         
         nav a {
-            color: var(--text-dark);
+            color: var(--text-secondary);
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.2s;
+            font-size: 15px;
+            transition: color 0.3s;
         }
         
         nav a:hover {
-            opacity: 1;
-            color: var(--blood-red);
+            color: var(--text-primary);
         }
         
         main {
-            padding: 2.5rem 0;
+            padding: 1rem 0 3rem;
+        }
+        
+        .hero {
+            margin-bottom: 3rem;
         }
         
         h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, var(--blood-red), var(--blood-dark));
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #f5f5f7 0%, #a1a1a6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255, 0, 43, 0.3);
-            position: relative;
-            display: inline-block;
         }
         
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
-        }
-        
-        .prose {
-            max-width: 100%;
-        }
-        
-        .prose p {
-            margin-bottom: 1.5rem;
+        .subtitle {
+            color: var(--text-secondary);
             font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border);
+        }
+        
+        .card p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
             line-height: 1.7;
+            color: var(--text-secondary);
+            font-weight: 400;
         }
         
-        .blood-text {
-            color: var(--blood-red);
-            font-weight: 600;
-            text-shadow: 0 0 5px rgba(255, 0, 43, 0.5);
+        .card p:last-child {
+            margin-bottom: 0;
         }
         
-        .prose a {
-            color: var(--blood-red);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 600;
-            position: relative;
-        }
-        
-        .prose a:hover {
-            text-shadow: 0 0 8px var(--blood-red);
-        }
-        
-        .prose a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--blood-red);
-            transition: width 0.3s;
-        }
-        
-        .prose a:hover::after {
-            width: 100%;
+        .highlight {
+            color: var(--text-primary);
+            font-weight: 500;
         }
         
         hr {
             border: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--blood-red), transparent);
+            background: var(--border);
             margin: 2.5rem 0;
         }
         
+        .social-section {
+            margin: 2rem 0;
+        }
+        
+        .social-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+        }
+        
         .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            transition: all 0.3s;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--border);
+            transform: translateY(-2px);
+        }
+        
+        .social-link i {
+            font-size: 1.3rem;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .social-link span {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .profile-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+            gap: 1rem;
+            margin-top: 2rem;
         }
         
-        .social-links a {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.2rem;
-            background: rgba(139, 0, 0, 0.2);
-            border: 1px solid rgba(255, 0, 43, 0.3);
-            border-radius: 5px;
-            transition: all 0.3s;
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-        
-        .social-links a:hover {
-            background: rgba(139, 0, 0, 0.4);
-            border-color: var(--blood-red);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 0, 43, 0.2);
-        }
-        
-        .social-links i {
-            color: var(--blood-red);
-            font-size: 1.2rem;
-        }
-        
-        .btn-blood {
-            background: linear-gradient(45deg, var(--blood-dark), var(--blood-red));
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s;
-            text-decoration: none;
+        .profile-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            border: none;
-            cursor: pointer;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 10px rgba(255, 0, 43, 0.3);
+            gap: 0.7rem;
+            padding: 0.9rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
         }
         
-        .btn-blood:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(255, 0, 43, 0.4);
-            text-decoration: none;
+        .profile-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
         
         .copyright {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 3rem;
-            font-size: 0.875rem;
-            opacity: 0.7;
-            padding: 1rem 0;
-            border-top: 1px solid rgba(255, 0, 43, 0.2);
-        }
-        
-        .blood-drip {
-            position: absolute;
-            top: 0;
-            width: 3px;
-            height: 50px;
-            background: var(--blood-red);
-            border-radius: 0 0 5px 5px;
-            opacity: 0.7;
-            animation: drip 8s infinite;
-        }
-        
-        @keyframes drip {
-            0%, 25% { height: 50px; opacity: 0.7; }
-            30% { height: 70px; opacity: 0.7; }
-            35%, 100% { height: 70px; opacity: 0; }
-        }
-        
-        .blood-drip:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .blood-drip:nth-child(2) {
-            left: 20%;
-            animation-delay: 2s;
-        }
-        
-        .blood-drip:nth-child(3) {
-            left: 70%;
-            animation-delay: 4s;
-        }
-        
-        .blood-drip:nth-child(4) {
-            left: 85%;
-            animation-delay: 6s;
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border);
         }
         
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
             h1 {
                 font-size: 2.2rem;
             }
             
-            .container {
-                padding: 0 1rem;
+            .card {
+                padding: 2rem 1.5rem;
             }
             
             .social-links {
-                gap: 1rem;
+                grid-template-columns: 1fr;
             }
             
-            .social-links a {
-                padding: 0.5rem 1rem;
+            header {
+                padding: 1.8rem 0 1.5rem;
             }
+        }
+        
+        /* iPhone-like text styles */
+        .text-large {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: -0.25px;
+        }
+        
+        .text-medium {
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+        
+        .text-small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+        
+        /* Toji-inspired minimalist details */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 2rem 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-right: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <!-- Blood drip animations -->
-    <div class="blood-drip"></div>
-    <div class="blood-drip"></div>
-    <div class="blood-drip"></div>
-    <div class="blood-drip"></div>
-    
     <div class="container">
         <header>
             <a href="/" class="logo">
@@ -323,78 +297,85 @@
                 <a href="https://x.com/bm00__" target="_blank" title="Twitter">
                     <i class="fab fa-x-twitter"></i>
                 </a>
-                <a href="/feed.xml" target="_blank" title="RSS">
-                    <i class="fas fa-rss"></i>
+                <a href="https://hackerone.com/syc10" target="_blank" title="HackerOne">
+                    <i class="fab fa-hackerone"></i>
                 </a>
             </nav>
         </header>
         
         <main>
-            <div class="prose">
+            <div class="hero">
                 <h1>betat amine "syyc_"</h1>
-                <p class="blood-text">Born: 01/11/2004</p>
+                <div class="subtitle">
+                    <span class="badge">Born: 01/11/2004</span>
+                    <span class="badge">Security Researcher</span>
+                </div>
             </div>
             
-            <article>
-                <div class="prose">
-                    <p>Hey, I am <span class="blood-text">betat amine "syyc_"</span>, a security researcher and bug bounty hunter.</p>
-                    <p>I'm passionate about <span class="blood-text">finding vulnerabilities</span> and securing digital systems across the internet.</p>
-                    <p>I enjoy dedicating my time to <span class="blood-text">vulnerability research</span>, participating in bug bounty programs, and hacking challenges.</p>
-                    <p>Outside of cybersecurity, I'm interested in technology, programming, and continuous learning.</p>
-                    
-                    <div style="flex: 1 1 auto;"></div>
-                    <hr>
-                    
-                    <p>Find me on</p>
-                    <div class="social-links">
-                        <a href="https://hackerone.com/syc10" target="_blank">
-                            <i class="fab fa-hackerone"></i> HackerOne
-                        </a>
-                        <a href="https://bugcrowd.com/h/syyc" target="_blank">
-                            <i class="fas fa-bug"></i> BugCrowd
-                        </a>
-                        <a href="https://github.com/syc-10" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://x.com/bm00__" target="_blank">
-                            <i class="fab fa-x-twitter"></i> X.com
-                        </a>
-                    </div>
-                    
-                    <hr>
-                    
-                    <p>If you're a security researcher interested in collaboration, feel free to reach out!</p>
-                    
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                        <a href="https://hackerone.com/syc10" target="_blank" class="btn-blood">
-                            <i class="fab fa-hackerone"></i> HackerOne Profile
-                        </a>
-                        <a href="https://bugcrowd.com/h/syyc" target="_blank" class="btn-blood">
-                            <i class="fas fa-bug"></i> BugCrowd Profile
-                        </a>
-                    </div>
+            <div class="card">
+                <p>Hey, I am <span class="highlight">betat amine "syyc_"</span>, a security researcher and bug bounty hunter.</p>
+                <p>I'm passionate about <span class="highlight">finding vulnerabilities</span> and securing digital systems across the internet.</p>
+                <p>I enjoy dedicating my time to <span class="highlight">vulnerability research</span>, participating in bug bounty programs, and hacking challenges.</p>
+                <p>Outside of cybersecurity, I'm interested in technology, programming, and continuous learning.</p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="social-section">
+                <h3>Find me on</h3>
+                <div class="social-links">
+                    <a href="https://hackerone.com/syc10" target="_blank" class="social-link">
+                        <i class="fab fa-hackerone"></i>
+                        <span>HackerOne</span>
+                    </a>
+                    <a href="https://bugcrowd.com/h/syyc" target="_blank" class="social-link">
+                        <i class="fas fa-bug"></i>
+                        <span>BugCrowd</span>
+                    </a>
+                    <a href="https://github.com/syc-10" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://x.com/bm00__" target="_blank" class="social-link">
+                        <i class="fab fa-x-twitter"></i>
+                        <span>X.com</span>
+                    </a>
                 </div>
-            </article>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div>
+                <p class="text-medium">If you're a security researcher interested in collaboration, feel free to reach out!</p>
+                
+                <div class="profile-links">
+                    <a href="https://hackerone.com/syc10" target="_blank" class="profile-btn">
+                        <i class="fab fa-hackerone"></i> HackerOne Profile
+                    </a>
+                    <a href="https://bugcrowd.com/h/syyc" target="_blank" class="profile-btn">
+                        <i class="fas fa-bug"></i> BugCrowd Profile
+                    </a>
+                </div>
+            </div>
             
             <div class="copyright">
                 <span>2024-PRESENT © syyc_</span>
-                <div style="flex: 1 1 auto;"></div>
             </div>
         </main>
     </div>
 
     <script>
-        // Simple text effect
+        // Simple interaction for the minimalist design
         document.addEventListener('DOMContentLoaded', function() {
-            const bloodTextElements = document.querySelectorAll('.blood-text');
+            const links = document.querySelectorAll('.social-link, .profile-btn');
             
-            bloodTextElements.forEach(el => {
-                el.addEventListener('mouseover', () => {
-                    el.style.textShadow = '0 0 10px var(--blood-red)';
+            links.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.2s ease';
                 });
                 
-                el.addEventListener('mouseout', () => {
-                    el.style.textShadow = '0 0 5px rgba(255, 0, 43, 0.5)';
+                link.addEventListener('mouseleave', function() {
+                    this.style.transition = 'all 0.3s ease';
                 });
             });
         });
